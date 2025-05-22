@@ -1,8 +1,4 @@
 "use strict";
-let level;
-level = 1;
-level = 'a';
-function render(document) {
-    console.log(document);
-}
+let numbers = [1, 2, 3];
+numbers.forEach(n => n.toFixed());
 //# sourceMappingURL=index.js.map
