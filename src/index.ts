@@ -1,4 +1,7 @@
-let sales = 123_456_789;
-let course = "TypeScript";
-let isPaid = true;
-let level; //let level: any
+let level;
+level = 1;
+level = 'a';  //avoid using of any type
+
+function render (document: any) {
+    console.log(document);
+}
