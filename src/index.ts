@@ -1,11 +1,4 @@
-console.log("Hello world");
-
-let age: number = 20;
-
-//age = 'a'; //Type 'string' is not assignable to type 'number'
-
-if (age < 50){
-    age += 10;
-}
-
-console.log(age);
+let sales = 123_456_789;
+let course = "TypeScript";
+let isPaid = true;
+let level; //let level: any
