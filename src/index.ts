@@ -1,5 +1,9 @@
-let user: [number, string] = [1, "maaz"];
-user[0].toFixed();
-user[1].toUpperCase();
-user.push(1);
-user.push("hi");
+// const small = 1;
+// const medium = 2;
+// const large = 3;
+
+//PascalCase
+// enum SizeS { Small = 's', Medium = 'm', Large ='l' };
+const enum Size { Small = 1, Medium, Large };
+let mySize: Size = Size.Medium;
+console.log(mySize);
