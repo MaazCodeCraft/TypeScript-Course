@@ -1,6 +1,11 @@
-//Literal (exact, specific)
+function greet (name: string | null | undefined): void {
+    if (name) {
+        console.log(name.toUpperCase());
+    } else {
+        console.log("Hola!");
+    }
+}
 
-type Quantity = 50 | 100;
-let quantity: Quantity = 100;
-
-type metric = "cm" | "inch"
+greet (null); //Hola!
+greet (undefined); //Hola!
+greet ("Maaz"); //MAAZ
