@@ -1,14 +1,6 @@
-type dragabble = {
-    drag: () => void;
-}
+//Literal (exact, specific)
 
-type resizeable = {
-    resize: () => void;
-}
+type Quantity = 50 | 100;
+let quantity: Quantity = 100;
 
-type UIWidget = dragabble & resizeable;
-
-let textBox: UIWidget = {
-    drag: () => {},
-    resize: () => {}
-}
+type metric = "cm" | "inch"
