@@ -1,19 +1,31 @@
 "use strict";
-class Ride {
-    static _activeRide = 0;
-    start() {
-        Ride._activeRide++;
+class Person {
+    firstName;
+    lastName;
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
-    stop() {
-        Ride._activeRide--;
+    get fullName() {
+        return this.firstName + ' ' + this.lastName;
     }
-    static get activeRide() {
-        return Ride._activeRide;
+    talk() {
+        console.log("Talking");
+    }
+    walk() {
+        console.log("Walking");
     }
 }
-let ride1 = new Ride();
-ride1.start();
-let ride2 = new Ride();
-ride2.start();
-console.log(Ride.activeRide);
+class Student extends Person {
+    studentID;
+    constructor(studentID, firstName, lastName) {
+        super(firstName, lastName);
+        this.studentID = studentID;
+    }
+    takeTest() {
+        console.log("Taking a test");
+    }
+}
+let student = new Student(1, 'Maaz', 'Ur Rahman');
+console.log(student.fullName);
 //# sourceMappingURL=index.js.map
