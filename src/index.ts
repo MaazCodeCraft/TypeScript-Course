@@ -1,18 +1,6 @@
-type Customer = {
-    birthday?: Date
+let speed: number | null = null;
+let ride = {
+    //Falsy (undefined, null, '', false, 0)
+    //The Nullish Coaelscing Operator
+    speed: speed ?? 30
 };
-
-function getCustomer (id: number): Customer | null | undefined {
-    return id === 0 ? null : { birthday : new Date};
-}
-
-let customer = getCustomer(1);
-//optional property access operator
-console.log(customer?.birthday?.getFullYear());
-
-//optional element access operator
-// customer?.[0]
-
-//optional call
-let log: any = null;
-console.log(log?.('a'));
