@@ -8,24 +8,23 @@ class Account {
     }
 
     deposit (amount: number) : void {
-        // this.id = 0;
         if (amount <= 0){
             throw new Error ('Invalid Amount');
         }
         this._balance += amount;
     }
-
-    /*
-    private calculateTax () {
-        
-    }
-    */
    
-    getBalance (): number {
+    get balance (): number {
         return this._balance;
+    }
+   
+    set balance (value: number) {
+        if (value < 0){
+            throw new Error ("Invalid Value");
+        }
+        this._balance = value;
     }
 }
 
 let account = new Account (1, 'Maaz', 0);
-// account.id = 0;
-console.log(account.getBalance());
+account.balance = 1;

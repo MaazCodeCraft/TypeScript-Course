@@ -15,10 +15,16 @@ class Account {
         }
         this._balance += amount;
     }
-    getBalance() {
+    get balance() {
         return this._balance;
+    }
+    set balance(value) {
+        if (value < 0) {
+            throw new Error("Invalid Value");
+        }
+        this._balance = value;
     }
 }
 let account = new Account(1, 'Maaz', 0);
-console.log(account.getBalance());
+account.balance = 1;
 //# sourceMappingURL=index.js.map
