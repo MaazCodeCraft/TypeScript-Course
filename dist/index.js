@@ -4,10 +4,10 @@ class Account {
     owner;
     _balance;
     nickName;
-    constructor(id, owner, balance) {
+    constructor(id, owner, _balance) {
         this.id = id;
         this.owner = owner;
-        this._balance = balance;
+        this._balance = _balance;
     }
     deposit(amount) {
         if (amount <= 0) {
