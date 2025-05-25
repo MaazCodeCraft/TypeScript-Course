@@ -1,5 +1,10 @@
 "use strict";
-let phone = document.getElementById("phone");
-HTMLElement;
-phone.value;
+function reject(message) {
+    throw new Error(message);
+}
+function processEvents() {
+    while (true) {
+    }
+}
+reject('...');
 //# sourceMappingURL=index.js.map

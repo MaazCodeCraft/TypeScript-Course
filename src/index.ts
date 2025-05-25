@@ -1,17 +1,13 @@
-//Unknown Type
-
-function render (document: any){
-    document.move();
-    document.fly();
-    document.whateverWeWant();
+function reject (message: string): never {
+    throw new Error (message);
 }
 
-function renderUn (document: unknown){
-    //Narrowing
-    if (document instanceof WordDocument){
-        document.toUpperCase();
+function processEvents () : never{
+    while (true) {
+        //Read a message from a queue
     }
-    document.move();
-    document.fly();
-    document.whateverWeWant();
 }
+
+// processEvents ();
+reject ('...');
+// console.log('Hello World'); //Unreachable code detected.
