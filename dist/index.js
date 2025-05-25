@@ -1,10 +1,17 @@
 "use strict";
-function reject(message) {
-    throw new Error(message);
-}
-function processEvents() {
-    while (true) {
+let user = [
+    {
+        name: 'Jhon Smith',
+        age: 30,
+        occupation: 'Softwere Engineering'
+    },
+    {
+        name: 'Kate Müller',
+        age: 28
     }
+];
+let value = 'a';
+if (typeof value === 'string') {
+    console.log(value.toUpperCase());
 }
-reject('...');
 //# sourceMappingURL=index.js.map
