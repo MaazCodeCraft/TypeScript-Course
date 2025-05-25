@@ -1,11 +1,24 @@
-class SeatAssignment {
-    //A1, A2, ....
-    //Maaz, Ali, ....
-    //Index Signature Property
-    [seatNumber: string]: string;
+class Ride {
+    private static _activeRide: number = 0;
+
+    start () {
+        Ride._activeRide++;
+    }
+
+    stop () {
+        Ride._activeRide--;
+    }
+
+    static get activeRide () {
+        return Ride._activeRide;
+    }
 }
 
-let seats = new SeatAssignment();
-seats.A1 = 'Maaz';
-seats.A2 = 'Ali';
-// seats.A2 = 2; //Type 'number' is not assignable to type 'string'
+
+let ride1 = new Ride ();
+ride1.start();
+
+let ride2 = new Ride ();
+ride2.start();
+
+console.log(Ride.activeRide);
