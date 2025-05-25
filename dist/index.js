@@ -1,17 +1,18 @@
 "use strict";
-let user = [
-    {
-        name: 'Jhon Smith',
-        age: 30,
-        occupation: 'Softwere Engineering'
-    },
-    {
-        name: 'Kate Müller',
-        age: 28
+class Account {
+    id;
+    owner;
+    balance;
+    constructor(id, owner, balance) {
+        this.id = id;
+        this.owner = owner;
+        this.balance = balance;
     }
-];
-let value = 'a';
-if (typeof value === 'string') {
-    console.log(value.toUpperCase());
+    deposit(amount) {
+        if (amount <= 0) {
+            throw new Error('Invalid Amount');
+        }
+        this.balance += amount;
+    }
 }
 //# sourceMappingURL=index.js.map
