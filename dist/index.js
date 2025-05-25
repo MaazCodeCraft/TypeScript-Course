@@ -1,6 +1,5 @@
 "use strict";
-let speed = null;
-let ride = {
-    speed: speed ?? 30
-};
+let phone = document.getElementById("phone");
+HTMLElement;
+phone.value;
 //# sourceMappingURL=index.js.map

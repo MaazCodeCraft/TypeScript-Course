@@ -1,6 +1,6 @@
-let speed: number | null = null;
-let ride = {
-    //Falsy (undefined, null, '', false, 0)
-    //The Nullish Coaelscing Operator
-    speed: speed ?? 30
-};
+// let phone = document.getElementById("phone") as HTMLInputElement;
+let phone = <HTMLInputElement> document.getElementById("phone");
+//HTMLElement
+HTMLElement
+//HTMLInputElement
+phone.value
