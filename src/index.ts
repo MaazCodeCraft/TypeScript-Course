@@ -37,5 +37,20 @@ class Teacher extends Person {
     }
 }
 
-let teacher = new Teacher ('jhon', 'smith');
-console.log(teacher.fullName);
+class Principal extends Person {
+    override get fullName () {
+        return 'Principal ' + super.fullName;
+    }
+}
+
+printNames ([
+    new Student(1, 'Maaz', 'Ur Rahman'),
+    new Teacher ('Jhon', 'Smith'),
+    new Principal ('Mery', 'Smith')
+])
+
+function printNames (people: Person []) {
+    for (let person of people) {
+        console.log(person.fullName);
+    }
+}
