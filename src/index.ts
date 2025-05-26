@@ -1,10 +1,7 @@
-class KeyValuePair {
-    constructor (public key: number | string, public value: string) {}
+class KeyValuePair <K, V> {
+    constructor (public key: K, public value: V) {}
 }
-
-class StringKeyValuePair {
-    constructor (public key: string, public value: string){}
-}
-
-let pair = new StringKeyValuePair ('1', 'Apple');
-// pair.key.toUpperCase ();
+//Beauty of genric Classes
+let pair = new KeyValuePair ('1', 'Apple');
+pair.key.toLocaleLowerCase ();
+pair.value.toUpperCase();
