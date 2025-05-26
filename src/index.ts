@@ -12,7 +12,7 @@ class Person {
         console.log("Talking");
     }
 
-    walk () {
+    protected walk () {
         console.log("Walking");
     }
 }
@@ -27,6 +27,7 @@ class Student extends Person {
     }
 
     takeTest () {
+        this.walk ();
         console.log("Taking a test");
     }
 }
