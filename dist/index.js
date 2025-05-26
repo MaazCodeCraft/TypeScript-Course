@@ -1,15 +1,20 @@
 "use strict";
-class GoogleCalender {
-    name;
-    constructor(name) {
-        this.name = name;
+class Person {
+    firstName;
+    lastName;
+    constructor(firstName, lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
-    ;
-    addEvents() {
-        throw new Error("Method not implemented.");
+    get fullName() {
+        return `${this.firstName} ${this.lastName}`;
     }
-    removeEvents() {
-        throw new Error("Method not implemented.");
+}
+class Employee extends Person {
+    salary;
+    constructor(salary, firstName, lastName) {
+        super(firstName, lastName);
+        this.salary = salary;
     }
 }
 //# sourceMappingURL=index.js.map

@@ -1,27 +1,38 @@
-// abstract class Calculator {
-//     constructor (public name: string) {}
+//Q1
+/*
+class Logger {
+    constructor (public logFile: string) {}
+    
+    log (message: string){}
+} 
+*/
 
-//     abstract addEvents (): void
-//     abstract removeEvents (): void
-// }
-
-interface Calender {
-    name: string;
-    addEvents (): void;
-    removeEvents (): void;
+//Q2
+class Person {
+    constructor(public firstName: string, public lastName: string) {}
+    get fullName () {
+        return `${this.firstName} ${this.lastName}`;
+    }
 }
 
-interface CloudCalender extends Calender {
-    sync () : void;
+//Q3
+class Employee extends Person{
+    constructor (
+        public salary: number, 
+        firstName: string, 
+        lastName: string) {
+        super (firstName, lastName);
+    }
 }
 
-class GoogleCalender implements Calender{
-    constructor (public name: string) {};
-    addEvents(): void {
-        throw new Error("Method not implemented.");
-    }
-    removeEvents(): void {
-        throw new Error("Method not implemented.");
-    }
- 
+//Q4
+interface Employee {
+    name: string,
+    salary: number,
+}
+
+interface address {
+    street: string,
+    city: string,
+    zipCode: number
 }
