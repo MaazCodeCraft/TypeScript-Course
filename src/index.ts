@@ -1,38 +1,10 @@
-//Q1
-/*
-class Logger {
-    constructor (public logFile: string) {}
-    
-    log (message: string){}
-} 
-*/
-
-//Q2
-class Person {
-    constructor(public firstName: string, public lastName: string) {}
-    get fullName () {
-        return `${this.firstName} ${this.lastName}`;
-    }
+class KeyValuePair {
+    constructor (public key: number | string, public value: string) {}
 }
 
-//Q3
-class Employee extends Person{
-    constructor (
-        public salary: number, 
-        firstName: string, 
-        lastName: string) {
-        super (firstName, lastName);
-    }
+class StringKeyValuePair {
+    constructor (public key: string, public value: string){}
 }
 
-//Q4
-interface Employee {
-    name: string,
-    salary: number,
-}
-
-interface address {
-    street: string,
-    city: string,
-    zipCode: number
-}
+let pair = new StringKeyValuePair ('1', 'Apple');
+// pair.key.toUpperCase ();

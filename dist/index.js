@@ -1,20 +1,19 @@
 "use strict";
-class Person {
-    firstName;
-    lastName;
-    constructor(firstName, lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
-    get fullName() {
-        return `${this.firstName} ${this.lastName}`;
+class KeyValuePair {
+    key;
+    value;
+    constructor(key, value) {
+        this.key = key;
+        this.value = value;
     }
 }
-class Employee extends Person {
-    salary;
-    constructor(salary, firstName, lastName) {
-        super(firstName, lastName);
-        this.salary = salary;
+class StringKeyValuePair {
+    key;
+    value;
+    constructor(key, value) {
+        this.key = key;
+        this.value = value;
     }
 }
+let pair = new StringKeyValuePair('1', 'Apple');
 //# sourceMappingURL=index.js.map
