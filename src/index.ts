@@ -1,7 +1,8 @@
-class KeyValuePair <K, V> {
-    constructor (public key: K, public value: V) {}
+class ArrayUtils  {
+    static wrapInArray <T> (value: T) {
+        return [value];
+    }
 }
-//Beauty of genric Classes
-let pair = new KeyValuePair ('1', 'Apple');
-pair.key.toLocaleLowerCase ();
-pair.value.toUpperCase();
+
+let numbers = ArrayUtils.wrapInArray (1); //let numbers: number[] 
+let number2 = ArrayUtils.wrapInArray ('1'); //let number2: string[]

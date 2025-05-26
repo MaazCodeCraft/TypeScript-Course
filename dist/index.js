@@ -1,13 +1,9 @@
 "use strict";
-class KeyValuePair {
-    key;
-    value;
-    constructor(key, value) {
-        this.key = key;
-        this.value = value;
+class ArrayUtils {
+    static wrapInArray(value) {
+        return [value];
     }
 }
-let pair = new KeyValuePair('1', 'Apple');
-pair.key.toLocaleLowerCase();
-pair.value.toUpperCase();
+let numbers = ArrayUtils.wrapInArray(1);
+let number2 = ArrayUtils.wrapInArray('1');
 //# sourceMappingURL=index.js.map
