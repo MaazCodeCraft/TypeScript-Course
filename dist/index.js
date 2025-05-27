@@ -1,9 +1,16 @@
 "use strict";
-class ArrayUtils {
-    static wrapInArray(value) {
-        return [value];
+class Person {
+    name;
+    constructor(name) {
+        this.name = name;
     }
 }
-let numbers = ArrayUtils.wrapInArray(1);
-let number2 = ArrayUtils.wrapInArray('1');
+class Customer extends Person {
+}
+function echo(value) {
+    return value;
+}
+echo({ name: "Maaz" });
+echo(new Person('Maaz'));
+echo(new Customer('Maaz'));
 //# sourceMappingURL=index.js.map

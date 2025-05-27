@@ -1,25 +1,23 @@
-// http://mywebsite.com/users
-// http://mywebsite.com/product
-
-interface Result<T> {
-    data: T | null,
-    error: string | null
+/*
+function echo <T extends number | string> (value: T): T {
+    return value;
 }
 
-function fetch<T> (url: string): Result <T> {
-    return {
-        data: null,
-        error: null
-    }
+echo ('a');
+echo (1);
+//echo (true); //Argument of type 'boolean' is not assignable to parameter of type 'string | number'.
+*/
+class Person {
+    constructor(public name: string) {}
 }
 
-interface User {
-    username: string
+class Customer extends Person{
 }
 
-interface Product {
-    title: string
+function echo <T extends Person> (value: T): T {
+    return value;
 }
 
-let result = fetch<User> ('url');
-result.data?.username;
+echo ({name: "Maaz"});
+echo (new Person ('Maaz'));
+echo (new Customer ('Maaz'));
