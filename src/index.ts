@@ -3,22 +3,22 @@ interface Product {
     price: number;
 }
 
-class Store <T> {
-    protected _object: T[] = [];
-
-    add (obj: T) : void {
-        this._object.push(obj);
-    }
-
-    //T is Product
-    //keyof T => 'name' .|. 'price'
-    find (property: keyof T, value: unknown): T | undefined {
-        return this._object.find(obj => obj[property] === value);
-    }
+type ReadOnly<T> = {
+    //Type Mapping
+    readonly [K in keyof T]: T[K];
 }
 
-let store = new Store<Product>();
-store.add({name: 'a', price: 100});
-store.find('name', 'a');
-store.find("price", 1);
-// store.find("nonExistingProperty", 1); //Argument of type '"nonExistingProperty"' is not assignable to parameter of type 'keyof Product'.
+type Optional<T> = {
+    [K in keyof T]?: T[K];
+}
+
+type Nullable<T> = {
+    [K in keyof T]: T[K] | null;
+}
+
+let product: ReadOnly <Product> = {
+    name: 'a',
+    price: 100
+}
+
+// product.name = 'a'; //Cannot assign to 'name' because it is a read-only property.
