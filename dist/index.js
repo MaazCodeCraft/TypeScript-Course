@@ -1,6 +1,8 @@
 "use strict";
-let product = {
-    name: 'a',
-    price: 100
-};
+function echo(org) {
+    return org;
+}
+function printName(obj) {
+    console.log(obj.name);
+}
 //# sourceMappingURL=index.js.map

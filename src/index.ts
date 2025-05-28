@@ -1,24 +1,15 @@
-interface Product {
-    name: string;
-    price: number;
+// Q1
+// Convert the function below to a generic function:
+// function echo(arg) { return arg; } 
+
+function echo<T> (org: T): T {
+    return org;
 }
 
-type ReadOnly<T> = {
-    //Type Mapping
-    readonly [K in keyof T]: T[K];
-}
+// Q2
+// When compiling the following piece of code, we get an error saying ‘Property name does not exist on type T’. How can we solve this problem?
+// function printName<T>(obj: T) {   console.log(obj.name); } 
 
-type Optional<T> = {
-    [K in keyof T]?: T[K];
-}
-
-type Nullable<T> = {
-    [K in keyof T]: T[K] | null;
-}
-
-let product: ReadOnly <Product> = {
-    name: 'a',
-    price: 100
-}
-
-// product.name = 'a'; //Cannot assign to 'name' because it is a read-only property.
+function printName<T extends {name: string}>(obj: T) {   
+    console.log(obj.name); 
+} 
