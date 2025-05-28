@@ -33,15 +33,18 @@ var __runInitializers = (this && this.__runInitializers) || function (thisArg, i
     }
     return useValue ? value : void 0;
 };
-function Component(constructor) {
-    console.log('Component Decorator Called');
-    constructor.prototype.uniqueId = Date.now();
-    constructor.prototype.insertInDOM = () => {
-        console.log('Inserting in the DOM');
+function Component(options) {
+    return (constructor) => {
+        console.log('Component Decorator Called');
+        constructor.prototype.option = options;
+        constructor.prototype.uniqueId = Date.now();
+        constructor.prototype.insertInDOM = () => {
+            console.log('Inserting in the DOM');
+        };
     };
 }
 let ProfileComponent = (() => {
-    let _classDecorators = [Component];
+    let _classDecorators = [Component({ selector: '#my-profile' })];
     let _classDescriptor;
     let _classExtraInitializers = [];
     let _classThis;
