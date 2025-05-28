@@ -1,23 +1,34 @@
-/*
-function echo <T extends number | string> (value: T): T {
-    return value;
+interface Product {
+    name: string;
+    price: number;
 }
 
-echo ('a');
-echo (1);
-//echo (true); //Argument of type 'boolean' is not assignable to parameter of type 'string | number'.
-*/
-class Person {
-    constructor(public name: string) {}
+class Store <T> {
+    protected _object: T[] = [];
+
+    add (obj: T) : void {
+        this._object.push(obj);
+    }
 }
 
-class Customer extends Person{
+//Pass on the generic type perameter 
+class CompressibleStore<T> extends Store <T>{
+    compress () {}
 }
 
-function echo <T extends Person> (value: T): T {
-    return value;
+//Restrict the generic type perameter 
+class SearchableStore<T extends { name: string }> extends Store <T> {
+    find (name: string): T | undefined {
+        return this._object.find (obj => obj.name === name);
+    }
 }
 
-echo ({name: "Maaz"});
-echo (new Person ('Maaz'));
-echo (new Customer ('Maaz'));
+//Fiz the generic type perameter
+class ProductStore extends Store <Product> {
+    filterByCategory (category: string): Product [] {
+        return [];
+    }   
+}
+
+let store = new CompressibleStore<Product>();
+store.compress();
