@@ -9,26 +9,16 @@ class Store <T> {
     add (obj: T) : void {
         this._object.push(obj);
     }
-}
 
-//Pass on the generic type perameter 
-class CompressibleStore<T> extends Store <T>{
-    compress () {}
-}
-
-//Restrict the generic type perameter 
-class SearchableStore<T extends { name: string }> extends Store <T> {
-    find (name: string): T | undefined {
-        return this._object.find (obj => obj.name === name);
+    //T is Product
+    //keyof T => 'name' .|. 'price'
+    find (property: keyof T, value: unknown): T | undefined {
+        return this._object.find(obj => obj[property] === value);
     }
 }
 
-//Fiz the generic type perameter
-class ProductStore extends Store <Product> {
-    filterByCategory (category: string): Product [] {
-        return [];
-    }   
-}
-
-let store = new CompressibleStore<Product>();
-store.compress();
+let store = new Store<Product>();
+store.add({name: 'a', price: 100});
+store.find('name', 'a');
+store.find("price", 1);
+// store.find("nonExistingProperty", 1); //Argument of type '"nonExistingProperty"' is not assignable to parameter of type 'keyof Product'.
