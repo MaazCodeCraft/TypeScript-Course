@@ -43,8 +43,12 @@ function Component(options) {
         };
     };
 }
+function Pipe(constructor) {
+    console.log('Pipe Decorators called');
+    constructor.prototype.pipe = true;
+}
 let ProfileComponent = (() => {
-    let _classDecorators = [Component({ selector: '#my-profile' })];
+    let _classDecorators = [Component({ selector: '#my-profile' }), Pipe];
     let _classDescriptor;
     let _classExtraInitializers = [];
     let _classThis;
