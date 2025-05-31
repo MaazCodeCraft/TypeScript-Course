@@ -1,7 +1,4 @@
-// import { Circle, Square } from "./shape";
+import { Circle, Square } from "./shapes";
 
-import * as Shapes from "./shape";
-
-let circle = new Shapes.Circle(1);
-console.log(circle);
-
+Circle
+Square

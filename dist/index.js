@@ -1,4 +1,4 @@
-import * as Shapes from "./shape";
-let circle = new Shapes.Circle(1);
-console.log(circle);
+import { Circle, Square } from "./shapes";
+Circle;
+Square;
 //# sourceMappingURL=index.js.map
