@@ -1,4 +1,4 @@
 import { calculateTax } from './tax';
 
-let tax = calculateTax (100);
+let tax = calculateTax ();
 console.log(tax);
