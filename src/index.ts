@@ -1,4 +1,4 @@
-import { Circle, Square } from "./shapes";
+import { calculateTax } from './tax';
 
-Circle
-Square
+let tax = calculateTax (100);
+console.log(tax);
